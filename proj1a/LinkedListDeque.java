@@ -61,15 +61,17 @@ public class LinkedListDeque<T>{
     private void printHelper(Node n){
         if(n == sentinel){
             return;
+        }else if(n.next == sentinel){
+            System.out.print(n.item);
+        }else{
+            System.out.print(n.item + " ");
         }
-        System.out.print(n.item + " ");
         printHelper(n.next);
     }
 
     /* print the list's items */
     public void printDeque(){
         printHelper(sentinel.next);
-        System.out.println("");
     }
 
     /* remove the first Node from the list */

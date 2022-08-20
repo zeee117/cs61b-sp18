@@ -128,10 +128,13 @@ public class ArrayDeque<T>{
     public void printDeque(){
         int tmpInd = front + 1;
         while(tmpInd != next){
-            System.out.print(items[tmpInd] + " ");
+            if(plusOne(tmpInd) == next){
+                System.out.print(items[tmpInd]);
+            }else{
+                System.out.print(items[tmpInd] + " ");
+            }
             tmpInd = plusOne(tmpInd);
         }
-        System.out.println("");
     }
 
     public T get(int i){
