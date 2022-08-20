@@ -77,7 +77,7 @@ class ArrayDequeTest {
         }
 
         for(int i = 1; i < 16; i += 1){
-            lld1.removeLast();
+            lld1.removeFirst();
         }
 
         printTestStatus(passed);

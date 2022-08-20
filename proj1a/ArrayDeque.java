@@ -59,7 +59,7 @@ public class ArrayDeque<T>{
             i += 1;
         }
         length /= 2;
-        front = length / 2;
+        front = length / 2 - 1;
         next = 0;
         items = tmp;
     }
@@ -86,6 +86,9 @@ public class ArrayDeque<T>{
 
     /* remove the front item in plusOne(front) */
     public T removeFirst(){
+        if(size == 0){
+            return null;
+        }
         if(length >= 16 && size * 4 == length){
             shrink();
         }
@@ -98,6 +101,9 @@ public class ArrayDeque<T>{
 
     /* remove the item in minusOne(next) */
     public T removeLast(){
+        if(size == 0){
+            return null;
+        }
         if(length >= 16 && size * 4 == length){
             shrink();
         }
@@ -128,7 +134,7 @@ public class ArrayDeque<T>{
     }
 
     public T get(int i){
-        int tmpInd = front;
+        int tmpInd = plusOne(front);
         for(int j = 0; j < i; j += 1){
             tmpInd = plusOne(tmpInd);
         }

@@ -73,6 +73,9 @@ public class LinkedListDeque<T>{
 
     /* remove the first Node from the list */
     public T removeFirst(){
+        if(size == 0){
+            return null;
+        }
         size -= 1;
         Node helper = sentinel.next;
         T ans = helper.item;
@@ -85,6 +88,9 @@ public class LinkedListDeque<T>{
 
     /* remove the last Node from the list */
     public T removeLast(){
+        if(size == 0){
+            return null;
+        }
         size -= 1;
         Node helper = sentinel.front;
         T ans = helper.item;
@@ -121,20 +127,5 @@ public class LinkedListDeque<T>{
     /* get the ith item using recursion */
     public T getRecursive(int i){
         return getHelper(i, sentinel.next);
-    }
-
-    public static void main(String[] args){
-        LinkedListDeque L = new LinkedListDeque();
-        System.out.println(L.isEmpty());
-        L.addFirst(1);
-        L.addFirst(2);
-        L.addLast(3);
-        System.out.println(L.get(0));
-        System.out.println(L.getRecursive(0));
-        System.out.println(L.isEmpty());
-        System.out.println(L.size());
-        L.printDeque();
-        System.out.println(L.removeFirst());
-        System.out.println(L.removeLast());
     }
 }
