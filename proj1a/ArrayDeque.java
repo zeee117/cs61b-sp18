@@ -131,6 +131,7 @@ public class ArrayDeque<T>{
             System.out.print(items[tmpInd] + " ");
             tmpInd = plusOne(tmpInd);
         }
+        System.out.println("");
     }
 
     public T get(int i){

@@ -69,6 +69,7 @@ public class LinkedListDeque<T>{
     /* print the list's items */
     public void printDeque(){
         printHelper(sentinel.next);
+        System.out.println("");
     }
 
     /* remove the first Node from the list */
