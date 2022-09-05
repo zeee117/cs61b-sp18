@@ -32,17 +32,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArrayRingBuffer.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ArrayRingBuffer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/synthesizer/ArrayRingBuffer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2772">
-              <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+            <state relative-caret-position="1364">
+              <caret line="73" column="5" lean-forward="true" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GuitarString.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GuitarString.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/synthesizer/GuitarString.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1144">
@@ -620,6 +620,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/synthesizer/GuitarString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1144">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/synthesizer/AbstractBoundedQueue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -630,16 +638,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/synthesizer/ArrayRingBuffer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2772">
-          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/synthesizer/GuitarString.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1144">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="1364">
+          <caret line="73" column="5" lean-forward="true" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
           <folding />
         </state>
       </provider>
