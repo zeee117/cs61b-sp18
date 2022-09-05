@@ -145,3 +145,278 @@ public class ArrayDeque<T>{
         return items[tmpInd];
     }
 }
+
+1.
+a.
+"carol dan"
+"carol eve"
+"dan carol"
+"alice bob"
+"carol eve"
+b.
+"alice bob"
+"fritz bob"
+"fritz gritz"
+2.
+a.
+if x > 1
+    f will return the 2th numbre which is less
+    than or equal x
+else if x < 1 and x >=0
+    f will in an infinite loop
+
+4.
+a.
+x[i] != y
+xclean[c] = x[i];
+c++;
+new int[c];
+xclean, 0, r, 0, c
+
+b.
+x == null
+null;
+x.first == y
+ilsans(x.rest, y);
+IntList(x.first, ilsans(x.rest, y));
+
+c.
+
+d.
+new int[]{4, 5, 5, 6};
+5;
+new int[]{4, 6};
+Sans.sans(x, y);
+assertEqual(expected, actual);
+4, 5, 5, 6
+5;
+4,6
+Sans.sans(x, y);
+assertEqual(expected, actual);
+
+5.
+a.
+private int length;
+length = 8;
+//resize()
+Item tmp = new Item[capacity];
+System.arraycopy(items, 0, tmp, 0, capacity);
+items.length = capacity;
+items = tmp;
+//push()
+resize(items.length * 2);
+items[items.size()] = x;
+items.size++;
+//pop
+items.size() == 0
+resize(items.length / 2);
+items[items.size() - 1] = 0;
+items.size--;
+//size()
+items.size();
+b.
+public default void purge(Item x){
+    Item[] ans = (Item[]) new Object[8];
+    Item[] p = this;
+    for(int i=0; i<this.length; i++){
+        if(p[i] != x){
+            ans.push(x);
+        }
+    }
+    return ans;
+}
+
+6.
+a.
+x.length == 0
+0
+x.length == 1
+x[0]
+return helperCombine(f, x, 0);
+private static int helperCombine(ComFunc f, int[]x, int ind){
+    if(ind == x.lnegth - 2){
+        return f.apply((x[ind], x[ind + 1]));
+    }
+    return f.apply((x[ind], helperCombine(f, x, ind + 1)));
+}
+
+b.
+Combine.combine(new Add(), x);
+
+7.
+a.
+default public void plusEquals(ListOfItns x){
+    if(x.size() != this.size()){return;}
+    for(int i=0; i<this.size; i++){
+        this.set(i, x[i] + this[i]);
+    }
+}
+
+b.
+public void plusEquals(DLListOfInts x){
+    if(x.size() != this.size()){
+        return;
+    }
+    x = x.sentinel.next;
+    for(IntNode p = sentinel.next; p!=sentinel; p = p.next){
+        p.item = p.item + x.item;
+        x = x.next;
+    }
+}
+
+pubilc static V get(Map61B m, K[] key){
+    int ind = getIndex(key);
+    if(ind == -1){
+        return null;
+    }
+    return m[ind];
+}
+
+public class ArraySet<T> {
+    private T[] items;
+    private int size;
+
+    public ArraySet() {
+        items = (T[]) new Object[100];
+        size = 0;
+    }
+
+    /* Returns true if this map contains a mapping for the specified key.
+     */
+    public boolean contains(T x) {
+        for(int i=0; i<size; i++){
+            if(items[i].equals(x)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /* Associates the specified value with the specified key in this map. 
+       Throws an IllegalArgumentException if the key is null. */
+    public void add(T x) {
+        if(contains(x)){
+            return;
+        }
+        items[size] = x;
+        size += 1;
+    }
+
+    /* Returns the number of key-value mappings in this map. */
+    public int size() {
+        return size;
+    }
+
+    public static void main(String[] args) {
+        ArraySet<String> s = new ArraySet<>();
+        s.add(null);
+        s.add("horse");
+        s.add("fish");
+        s.add("house");
+        s.add("fish");        
+        System.out.println(s.contains("horse"));        
+        System.out.println(s.size());       
+    }
+
+    /* Also to do:
+    1. Make ArraySet implement the Iterable<T> interface.
+    2. Implement a toString method.
+    3. Implement an equals() method.
+    */
+}
+
+map
+priority queue
+deque
+
+public boolean equalTwo(int[] a, int k){
+    Set<integer> s = new HashSet<>();
+    for(int item : a){
+        if(s.contains(k - item)){
+            return true;
+        }
+        s.add(item);
+    }
+    return false;
+}
+
+public class Queue<T>{
+    private Stack<T> s1;
+    private Stack<T> s2;
+
+    public Queue(){
+        s1 = new stack<>();
+        s2 = new stack<>();
+    }
+
+    public void push(T item){
+        s1.push(item);
+    }
+
+    public T poll(){
+        while(s1.size > 0){
+            s2.push(s1.poll);
+        }
+        T ans = s2.poll;
+        while(s2.size > 0){
+            s1.push(s2.poll);
+        }
+        return ans;
+    }
+}
+
+public class SortStack{
+    private Stack<integer> s1;
+    private Stack<integer> s2;
+
+    public void SortStack(){
+        s1 = new Stack<>();
+        s2 = new Stack<>();
+    }
+
+    public void push(int item){
+        while(!s1.isEmpty() && s1.peck() > item){
+            s2.push(s1.poll());
+        }
+        s1.push(item);
+        while(!s2.isEmpty()){
+            s1.push(s2.poll());
+        }
+    }
+
+    public int pop(){
+        return s1.poll();
+    }
+}
+
+@Override
+public String toString(){
+    String ans = "{";
+    for(T item : items){
+        ans += item.toString();
+        ans += ",";
+    }
+
+}
+
+public boolean equals(Object other){
+    if(other == this){
+        return true;
+    }
+    if(other == null){
+        return false;
+    }
+    if(other.getClass() != this.getClass()){
+        return false;
+    }
+    if(other.size() != this.size()){
+        return false;
+    }
+    ArraySet<T> a = (ArraySet<T>) other;
+    for(T item : items){
+        if(!a.contains(item)){
+            return false;
+        }
+    }
+    return ture;
+}
