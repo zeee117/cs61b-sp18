@@ -34,7 +34,7 @@ public class Percolation {
     private void errorHelper(int row, int col){
         if(row >= N || col >= N){
             throw new IndexOutOfBoundsException();
-        }else if(row < 0 || col < 0){
+        }else if(row <= 0 || col <= 0){
             throw new IllegalArgumentException();
         }
     }
@@ -86,6 +86,9 @@ public class Percolation {
     }
 
     public boolean percolates(){
+        if(openSize == 0){
+            return false;
+        }
         if(wqu.connected(upperBound, lowerBound)){
             return true;
         }
