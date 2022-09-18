@@ -420,3 +420,136 @@ public boolean equals(Object other){
     }
     return ture;
 }
+
+public static void main(String[] args){
+    try{
+        bis.pop();
+    }catch(NullPointerException e){
+        System.out.println("Success");
+    }
+}
+
+public static void main(String[] args){
+    BadIntegerStack bis = new BadIntegerStack();
+    bis.push(1);
+    bis.top.prev = top;
+    while(!bis.isEmpty()){
+        bis.pop();
+    }
+}
+
+mystery of 1 is 1
+3
+counter is 1
+1
+counter is 2
+mystery of 6 is 2
+
+public AltList<Y, X> pairSwapped(){
+    if(this.next.next == null){
+        return new AltList<Y, X>(this.next.item, 
+            new AltList<X, Y>(this.item, null));
+    }
+    AltList<Y, X> al = this.next.next.pairSwapped();
+    return new AltList<Y, X>(this.next.item, 
+        new AltList<X, Y>(this.item, al));
+}
+
+public AltList<Y, X> pariSwapped(){
+    AltList<Y, X> al = new AltList<Y, X>(this.next.item
+        new AltList<X, Y>(this.item, null));
+    if(this.next.next != null){
+        al.next.next = this.next.next.pairSwapped()
+    }
+    return al;
+}
+
+public Integer next(){
+    if(curList == null){
+        throw new NosuchElementException();
+    }
+    Integer ans = curList.head;
+    for(int i=0; i<k; i++){
+        curList = curList.tail;
+    }
+    hasNext = (curLsit != null);
+    return ans;
+}
+
+first sort the array
+then check out if every value in array can find the same value in it
+map 
+
+public int[] combine(int[] a, int[]b){
+    int i = 0;
+    int j = 0;
+    int ind = 0;
+    int[] ans = new int(a.length + b.length);
+    while(i < a.length() && j < b.length()){
+        if(a[i] == a[j]){
+            ans[ind] = a[i];
+            i++;
+            j++;
+        }else if(a[i] < b[j]){
+            ans[ind] = ans[i];
+            i++;
+        }else{
+            ans[ind] = b[j];
+            j++;
+        }
+        ind++;
+    }
+    while(i < a.length()){
+        ans[ind] = ans[i];
+        ind++;
+        i++;
+    }
+    while(j < b.length()){
+        ans[ind] = b[j];
+        ind++;
+        j++;
+    }
+    return ans;
+}
+
+list of sets
+quick find
+quick union
+
+static BST find(BDT T, Key key){
+    if(T == null){
+        return null;
+    }
+    if(T.key == key){
+        return T.key;
+    }else if(T.key < key){
+        return find(T.right, key);
+    }else{
+        return find(T.left, key);
+    }
+}
+
+static BST insert(BST T, Key ik){
+    if(T == null){
+        return new BST(ik);
+    }
+    if(T.key < ik){
+        T.right = insert(T.right, ik);
+    }else if(T.key > ik){
+        T.left = insert(T.left, ik);
+    }
+    return T;
+}
+
+public static boolean isBSTGood(TreeNode T){
+    return isBSTHelper(T, Integer.MIN_VAUE, Interger.MAX_VALUE);
+}
+
+public static boolean isBSTHelper(TreeNode T, int min, int max){
+    if(T == null){
+        return true;
+    }else if(T.value < min || T.value > max){
+        return false;
+    }
+    return isBSTHelper(T.left, min, T.value) && isBSTHelper(T.right, T.value, max);
+}
