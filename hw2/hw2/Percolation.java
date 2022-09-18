@@ -76,10 +76,10 @@ public class Percolation {
 
     public boolean isFull(int row, int col){
         errorHelper(row, col);
-        if(grids[row][col] >= 0 && wqu.connected(upperBound, xyToNum(row, col))){
-            return true;
+        if(!isOpen(row, col)){
+            return false;
         }
-        return false;
+        return wqu.connected(upperBound, xyToNum(row, col));
     }
 
     public int numberOfOpenSites(){
@@ -90,10 +90,7 @@ public class Percolation {
         if(openSize == 0){
             return false;
         }
-        if(wqu.connected(upperBound, lowerBound)){
-            return true;
-        }
-        return false;
+        return wqu.connected(upperBound, lowerBound);
     }
 
     public static void main(String[] args){
