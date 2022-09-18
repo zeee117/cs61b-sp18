@@ -11,6 +11,9 @@ public class Percolation {
     private final int lowerBound;
 
     public Percolation(int N){
+        if(N <= 0){
+            throw new IllegalArgumentException();
+        }
         grids = new int[N][N];
         this.N = N;
         wqu = new WeightedQuickUnionUF(N * N + 2);
@@ -32,10 +35,8 @@ public class Percolation {
     }
 
     private void errorHelper(int row, int col){
-        if(row >= N || col >= N){
+        if(row < 0 || row >= N || col < 0 || col >= N){
             throw new IndexOutOfBoundsException();
-        }else if(row <= 0 || col <= 0){
-            throw new IllegalArgumentException();
         }
     }
 
