@@ -41,11 +41,11 @@ public class TestComplexOomage {
         List<Oomage> deadlyList = new ArrayList<>();
 
         // Your code here.
-        for(int i=1; i<10; i++){
-            ArrayList<Integer> al = new ArrayList<>();
-            for(int j=i; j<200+i; j++){
-                al.add(j);
-            }
+        ArrayList<Integer> al = new ArrayList<>();
+        for(int j=1; j<5; j++){
+            al.add(j);
+        }
+        for(int i=1; i<100; i++){
             Oomage o = new ComplexOomage(al);
             deadlyList.add(o);
         }
