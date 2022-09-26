@@ -25,7 +25,7 @@ public class MazeBreadthFirstPaths extends MazeExplorer {
         q = new ArrayDeque<>();
         s = m.xyTo1D(sourceX, sourceY);
         t = m.xyTo1D(targetX, targetY);
-        distTo[s] = 1;
+        distTo[s] = 0;
         edgeTo[s] = s;
         q.add(s);
         // Add more variables here!
