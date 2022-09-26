@@ -553,3 +553,74 @@ public static boolean isBSTHelper(TreeNode T, int min, int max){
     }
     return isBSTHelper(T.left, min, T.value) && isBSTHelper(T.right, T.value, max);
 }
+
+2. the hashCode function return a very large number
+3. no
+4. very large and the people equals does't have the same hashCode
+5. large
+
+public int preOrder(tree T){
+    if(T == null){
+        return null;
+    }
+    visit(T.lable);
+    preOrder(T.left);
+    preOrder(T.right);
+}
+
+public int inOrder(tree T){
+    if(T == null){
+        return null;
+    }
+    inOrder(T.left);
+    visit(T.lable);
+    inOrder(T.right);
+}
+
+public static boolean isAHeap(IntTree xt){
+    if(xt == null){
+        return true;
+    }
+    if(getItem(xt) > getItem(xt.left) || getItem(xt) > getItem(xt.right)){
+        return false;
+    }
+    return isAHeap(xt.left) && isAHeap(xt.right);
+}
+
+public static void getTreeValues(IntTree xt, List<Integer> treeValues){
+    if(xt == null){
+        return;
+    }
+    getTreeValues(xt.left, treeValues);
+    treeValues.add(getItem(xt));
+    getTreeValues(xt.right, treeValues);
+}
+
+public static boolean vaildXelhaTree(IntTree xt, List<Integer> vals){
+    List<Integer> treeValues = new ArrayList<Integer>();
+    getTreeValues(xt, treeValues);
+    return isAHeap(xt) && treeValues.equals(vals);
+}
+
+public IntTree constructTree(int[] preorder, int[] inorder){
+    if(preorder.legth == 0 || inorder.lenght == 0){
+        return null;
+    }
+    IntTree it = new IntTree();
+    it.item = preorder[0];
+    it.left = constructTree(preleft, inleft);
+    it.right = constrcutTree(preright, inright);
+    return it;
+}
+
+public static void twocolor(Grah G, int v, Set<Integer> a, Set<Integer> b){
+    a.add(v);
+    for(int vInd : adj(v)){
+        if(a.contains(vInd)){
+            throw new IllegalArgumentException();
+        }
+        if(!b.contains(vInd)){
+            twoColor(G, vInd, b, a);
+        }
+    }
+}
