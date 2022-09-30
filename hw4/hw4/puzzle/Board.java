@@ -103,7 +103,10 @@ public class Board implements WorldState{
     }
 
     public boolean equals(Object y){
-        if(this.getClass() != y.getClass()){
+        if(y == this){
+            return true;
+        }
+        if(y == null || this.getClass() != y.getClass()){
             return false;
         }
         Board b = (Board)y;
@@ -119,6 +122,11 @@ public class Board implements WorldState{
             }
         }
         return true;
+    }
+
+    @Override
+    public int hashCode(){
+        return super.hashCode();
     }
 
     /** Returns the string representation of the board. 
