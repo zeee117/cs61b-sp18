@@ -624,3 +624,63 @@ public static void twocolor(Grah G, int v, Set<Integer> a, Set<Integer> b){
         }
     }
 }
+
+public class List{
+    private int length;
+    private Node sentinel;    
+    private class Node{
+        private int val;
+        private Node next;
+
+        public Node(int val){
+            this.val = val;
+            this.next = null;
+        }
+
+        public Node(int val, Node next){
+            this.val = val;
+            this.next = next;
+        }
+    }
+
+    public List(){
+        length = 0;
+        sentinel = new Node();
+
+    }
+
+    public addNode(int val, int ind){
+        if(ind > length + 1){
+            throw new IndexOutOfBoundsException();
+        }
+        ListNode now = sentinel;
+        ListNode add = new Node(val);
+        while(ind > 0){
+            now = now.next;
+            ind -= 1;
+        }
+        add.next = now.next;
+        now.next = add;
+        length += 1;
+    }
+
+    public Node deleteNode(int ind){
+        return deleteNodeHelper(ind, sentinel);
+    }
+
+    private Node deleteNodeHelper(int ind, Node head){
+        if(head == null){
+            throw new IndexOutOfBoundsException();
+        }else if(ind == 1){
+            ListNode deleted = head.next;
+            head.next = head.next.next;
+            deleted.next = null;
+            return deleted;
+        }
+        return deleteNodeHelper(ind - 1, head.next);
+    }
+
+    public int size(){
+        return length;
+    }
+}
