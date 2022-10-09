@@ -61,14 +61,8 @@ public class MergeSort {
             Queue<Item> q1, Queue<Item> q2) {
         // Your code here!
         Queue<Item> ans = new Queue<>();
-        while(!q1.isEmpty() && !q2.isEmpty()){
+        while(!(q1.isEmpty() && q2.isEmpty())){
             ans.enqueue(MergeSort.getMin(q1, q2));
-        }
-        while(!q1.isEmpty()){
-            ans.enqueue(q1.dequeue());
-        }
-        while(!q2.isEmpty()){
-            ans.enqueue(q2.dequeue());
         }
         return ans;
     }
@@ -77,11 +71,16 @@ public class MergeSort {
     public static <Item extends Comparable> Queue<Item> mergeSort(
             Queue<Item> items) {
         // Your code here!
+        if(items.size() <= 1){
+            return items;
+        }
         Queue<Queue<Item>> qq = makeSingleItemQueues(items);
         while(qq.size() > 1){
             Queue<Queue<Item>> tmpQq = new Queue<Queue<Item>>();
             while(!qq.isEmpty()){
-                Queue<Item> tmp = mergeSortedQueues(qq.dequeue(), qq.dequeue());
+                Queue<Item> q1 = qq.dequeue();
+                Queue<Item> q2 = qq.isEmpty() ? new Queue<Item>() : qq.dequeue();
+                Queue<Item> tmp = mergeSortedQueues(q1, q2);
                 tmpQq.enqueue(tmp);
             }
             qq = tmpQq;
